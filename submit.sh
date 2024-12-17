@@ -16,11 +16,9 @@
 . /etc/profile
 
 # Estas líneas nunca cambian
-## TODO: cambiar las líneas hasta que exista este archivo
-AF3_HOME=/home/shared/alphafold3
+## TODO: ¿crear el directorio compartido 'alphafold3' y destinar todo allí?
+AF3_HOME=/home/shared/alphafold/AF3/alphafold3
 AF3_SIF=${AF3_HOME}/alphafold3.sif
-
-module load gcc/11.2.0 nvhpc/22.3 #cargar módulos necesarios
 
 ## TODO: parametrizar el input
 
@@ -28,9 +26,9 @@ singularity exec \
     --nv \
     --bind ${AF3_HOME}:${AF3_HOME} \
     ${AF3_SIF} \
-    python run_alphafold.py \
-    --model_dir=${AF3_HOME}/alphafold3 \
-    --db_dir=${AF3_HOME}/public_databases \
+    python ${AF3_HOME}/run_alphafold.py \
+    --model_dir=${AF3_HOME}/models \
+    --db_dir=${AF3_HOME}/dbs \
     --json_path=${HOME}/alphafold3/af_input/5NJX_merged.json \
     --output_dir=${HOME}/alphafold3/af_output
 
