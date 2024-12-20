@@ -31,7 +31,7 @@ singularity exec \
     ${AF3_SIF} \
     python ${YOUR_AF3_DIRECTORY}/run_alphafold.py \
     --model_dir=${YOUR_AF3_DIRECTORY}/models \ # Nota: se espera que el usuario consiga los modelos por su cuenta
-    --db_dir=${AF3_SHARED_HOME}/dbs \
+    --db_dir=${AF3_SHARED_HOME}/databases \
     --json_path=${HOME}/af_input/input.json \ 
     --output_dir=${YOUR_AF3_DIRECTORY}/af_output
 
