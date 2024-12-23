@@ -21,7 +21,7 @@ AF3_SIF=${AF3_HOME}/alphafold3_v300.sif
 AF3_DBS=${AF3_HOME}/databases
 
 # Estas líneas se pueden modificar para apuntar a los directorios de cada usuario
-AF3_REPO=${HOME}/alphafold3   # Localización del repositorio clonado de alhpafold3
+AF3_REPO=${HOME}/alphafold3   # Localización del repositorio clonado de alphafold3
 AF3_MODELS=${AF3_REPO}/models # El usuario debe obtener los modelos de google por su cuenta
 
 INPUT_PATH=${HOME}/af_input/input.json
