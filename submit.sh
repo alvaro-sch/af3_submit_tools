@@ -16,23 +16,25 @@
 . /etc/profile
 
 # Estas líneas nunca cambian
-## TODO: solicitar el directorio compartido 'alphafold3'
-AF3_SHARED_HOME=/home/shared/alphafold3
-AF3_SIF=${AF3_SHARED_HOME}/alphafold3_v300.sif
+AF3_HOME=/home/shared/alphafold3
+AF3_SIF=${AF3_HOME}/alphafold3_v300.sif
+AF3_DBS=${AF3_HOME}/databases
 
-# Esta línea es a modificar por el usuario, dirigir a su copia del repositorio de AF3
-YOUR_AF3_DIRECTORY=/${HOME}/alphafold3
+# Estas líneas se pueden modificar para apuntar a los directorios de cada usuario
+AF3_REPO=${HOME}/alphafold3   # Localización del repositorio clonado de alhpafold3
+AF3_MODELS=${AF3_REPO}/models # El usuario debe obtener los modelos de google por su cuenta
+
+INPUT_PATH=${HOME}/af_input/input.json
+OUTPUT_DIR=${HOME}/af_output
 
 ## TODO: parametrizar el input
 
 singularity exec \
     --nv \
-    --bind ${AF3_SHARED_HOME}:${AF3_SHARED_HOME} \
+    --bind ${AF3_HOME}:${AF3_HOME} \
     ${AF3_SIF} \
-    python ${YOUR_AF3_DIRECTORY}/run_alphafold.py \
-    --model_dir=${YOUR_AF3_DIRECTORY}/models \ # Nota: se espera que el usuario consiga los modelos por su cuenta
-    --db_dir=${AF3_SHARED_HOME}/databases \
-    --json_path=${HOME}/af_input/input.json \ 
-    --output_dir=${YOUR_AF3_DIRECTORY}/af_output
-
-echo "All done."
+    python ${AF3_REPO}/run_alphafold.py \
+    --model_dir=${AF3_MODELS} \
+    --db_dir=${AF3_DBS} \
+    --json_path=${INPUT_PATH} \
+    --output_dir=${OUTPUT_DIR}
