@@ -27,8 +27,6 @@ AF3_MODELS=${AF3_REPO}/models # El usuario debe obtener los modelos de google po
 INPUT_PATH=${HOME}/af_input/input.json
 OUTPUT_DIR=${HOME}/af_output
 
-## TODO: parametrizar el input
-
 singularity exec \
     --nv \
     --bind ${AF3_HOME}:${AF3_HOME} \
