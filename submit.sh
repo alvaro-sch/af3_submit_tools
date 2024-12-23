@@ -10,7 +10,7 @@
 #SBATCH --cpus-per-task=10
 #SBATCH --gpus-per-task=1
 ## Tiempo de ejecucion limite (dias-horas:minutos:segundos)
-#SBATCH --time=2-00:00:00
+#SBATCH --time=00-02:30:00
 ## Job script
 
 . /etc/profile
