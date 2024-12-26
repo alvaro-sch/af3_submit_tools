@@ -1,7 +1,7 @@
 #!/bin/bash
 ## Directivas SBATCH que configuran el trabajo
 ## Nombre del trabajo
-#SBATCH --job-name=af3_test
+#SBATCH --job-name=af3_run
 ## Cola donde encolar (short: <2h, multi para el resto)
 #SBATCH --partition=multi
 ## Cantidad de procesos MPI a lanzar por cada nodo (MPI puro: 64)
