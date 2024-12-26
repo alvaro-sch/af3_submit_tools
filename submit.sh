@@ -24,7 +24,7 @@ AF3_DBS=${AF3_HOME}/databases
 AF3_REPO=${HOME}/alphafold3   # Localización del repositorio clonado de alphafold3
 AF3_MODELS=${AF3_REPO}/models # El usuario debe obtener los modelos de google por su cuenta
 
-INPUT_PATH=${HOME}/af_input/input.json
+INPUT_PATH=${HOME}/af_input/input.json # AF3 requiere input con formato específico. Si es necesario, convertir FASTA mediante utilidades como https://github.com/snufoodbiochem/Alphafold3_tools
 OUTPUT_DIR=${HOME}/af_output
 
 singularity exec \
